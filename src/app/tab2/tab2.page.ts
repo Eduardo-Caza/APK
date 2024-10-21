@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { photoService } from '../services/photo.service'; // Asegúrate de que este camino sea correcto
 
 @Component({
   selector: 'app-tab2',
@@ -6,7 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  constructor(public photoService: photoService) { // Asegúrate de que sea "PhotoService"
+  }
 
-  constructor() {}
-
+  addPhotoToGallery() {
+    this.photoService.addNewToGallery();
+  }
 }
